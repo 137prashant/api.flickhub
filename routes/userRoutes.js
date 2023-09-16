@@ -12,6 +12,11 @@ const validateToken = require("../middleware/validateToken");
 
 router.post("/register", registerUser);
 
+router.get("/ok", (req,res)=>{
+  console.log("okkk")
+  res.status(200).json({"message":"success"})
+});
+
 router.post("/login", loginUser);
 
 router.get("/user", validateToken, currentUser);
